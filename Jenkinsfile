@@ -6,7 +6,7 @@ pipeline {
                 script {
                     properties([pipelineTriggers([pollSCM('* * * * *')])])
                 }
-                git 'https://github.com/zrihennoy/JenkinsTest.git'
+                git 'https://github.com/Dgotlieb/JenkinsTest.git'
             }
         }
         stage('run python') {
