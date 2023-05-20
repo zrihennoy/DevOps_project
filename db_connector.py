@@ -1,8 +1,10 @@
 import pymysql
-
+def db_connect():
+    conn = pymysql.connect(host='localhost', port=3306, user='root', password='Qwe123!!', db='public')
+    return conn
 
 def get_username(user_id):
-    conn = pymysql.connect(host='localhost', port=3306, user='root', password='Qwe123!!', db='public')
+    conn = db_connect()
     cursor = conn.cursor()
     len= cursor.execute("select user_name from public.users where user_id=%s;", user_id)
     user = (cursor.fetchall())
