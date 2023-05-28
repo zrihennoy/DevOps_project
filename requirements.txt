@@ -1,6 +1,5 @@
 requests
 flask
-signal
 pymysql
 selenium
 unittest
