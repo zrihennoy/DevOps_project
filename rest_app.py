@@ -1,9 +1,15 @@
 from flask import request,Flask
+import os
+import signal
 
 import db_connector
 
 app = Flask(__name__)
 # local users storage
+@app.route('/stop_server')
+def stop_server():
+    os.kill(os.getpid(), signal.CTRL_C_EVENT)
+    return 'Server stopped'
 
 @app.route('/users/<user_id>', methods=['GET', 'POST', 'DELETE', 'PUT'])
 def user(user_id):
