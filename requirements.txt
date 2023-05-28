@@ -2,4 +2,3 @@ requests
 flask
 pymysql
 selenium
-unittest
