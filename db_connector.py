@@ -1,6 +1,6 @@
 import pymysql
 def db_connect():
-    conn = pymysql.connect(host='localhost', port=3308, user='user', password='password', db='db')
+    conn = pymysql.connect(host='devops_project_my-db', port=3306, user='user', password='password', db='db')
     return conn
 
 def get_username(user_id):
@@ -17,7 +17,7 @@ def get_username(user_id):
         return user[0][0]
 
 def create_user(user_id, user_name):
-    conn = pymysql.connect(host='localhost', port=3308, user='user', password='password', db='db')
+    conn = pymysql.connect(host='devops_project_my-db', port=3306, user='user', password='password', db='db')
     cursor = conn.cursor()
     cursor.execute("insert into public.users (user_id, user_name) VALUES (%s,%s);", (user_id, user_name))
     conn.commit()
@@ -25,7 +25,7 @@ def create_user(user_id, user_name):
     conn.close()
 
 def delete_user(user_id):
-    conn = pymysql.connect(host='localhost', port=3308, user='user', password='password', db='db')
+    conn = pymysql.connect(host='devops_project_my-db', port=3306, user='user', password='password', db='db')
     cursor = conn.cursor()
     cursor.execute("delete from public.users where user_id = %s;", user_id)
     conn.commit()
@@ -33,7 +33,7 @@ def delete_user(user_id):
     conn.close()
 
 def update_user(user_id, user_name):
-    conn = pymysql.connect(host='localhost', port=3308, user='user', password='password', db='db')
+    conn = pymysql.connect(host='devops_project_my-db', port=3306, user='user', password='password', db='db')
     cursor = conn.cursor()
     cursor.execute("update public.users set user_name = %s WHERE (user_id = %s);", (user_name, user_id))
     conn.commit()
