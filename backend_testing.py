@@ -1,9 +1,9 @@
 import requests
 import  pymysql
 try:
-    res = requests.post('http://127.0.0.1:5000/users/1',json={"user_name": "john"})
+    res = requests.post('http://127.0.0.1:5000/users/7',json={"user_name": "john1"})
     print(res.content)
-    res = requests.get('http://127.0.0.1:5000/users/1')
+    res = requests.get('http://127.0.0.1:5000/users/2')
     if res.ok:
         respose= res.json()
         print(respose)
