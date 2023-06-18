@@ -12,7 +12,7 @@ else:
     print(res.content)
     print("user doesnt exist")
 
-conn = pymysql.connect(host='devops_project_my-db', port=3308, user='user', password='password', db='db')
+conn = pymysql.connect(host='devops_project-db-1', port=3308, user='user', password='password', db='db')
 cursor = conn.cursor()
 cursor.execute("select user_name from public.users where user_id=2;")
 username=cursor.fetchall()
